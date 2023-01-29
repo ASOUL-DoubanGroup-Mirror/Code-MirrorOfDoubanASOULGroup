@@ -67,9 +67,9 @@ while nums != 412575:
     LOGGER.DEBUG('Finish data parse,now try storge data...')
     dbConnecter.addTidRecords(storge_data)
     # 防止频率过高被封
-    rand_nums = random.randint(10,30)
+    rand_nums = random.randint(6,20)
     LOGGER.DEBUG('Sleeping.....,sleep time is {seconds} secs'.format(seconds=rand_nums))
-    time.sleep(rand_nums)
+    time.sleep(6)
     LOGGER.DEBUG('Recovering...')
     nums = nums + 25;
 
