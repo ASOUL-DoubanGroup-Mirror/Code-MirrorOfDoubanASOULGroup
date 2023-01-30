@@ -14,10 +14,12 @@ from TerminalLogger import LOGGER
 from orm import TidDataBaseConnector
 
 
-cookie = r'll="118172"; bid=4_9Vn3iZ1pw; __yadk_uid=Ikn5yiZvj0Fr3ZR2EQSX8ZC8G6YrnFRG; douban-fav-remind=1; gr_user_id=12375f91-6d72-42d9-97b0-83145fe1d3a9; viewed="3168129_1374009_26416562_25720141"; push_doumail_num=0; ct=y; dbcl2="220876514:21E4rbo7zUA"; ck=FPy5; ap_v=0,6.0; push_noty_num=0; _pk_ref.100001.8cb4=%5B%22%22%2C%22%22%2C1674801250%2C%22https%3A%2F%2Fmail.qq.com%2F%22%5D; _pk_ses.100001.8cb4=*; _pk_id.100001.8cb4=e308c8c595b70eaf.1653107776.177.1674801617.1674799317.'
-
+# cookie自己从网页端查询获取。使用cookie能够尽量避免出现验证码的问题。
+# 以及豆瓣的cookie过期挺快的x这一点可能需要注意一下
+cookie = r''
 
 c = getCookieDict(cookie)
+
 requestsHeaders = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36',
     "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
