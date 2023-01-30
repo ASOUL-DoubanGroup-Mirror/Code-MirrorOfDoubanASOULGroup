@@ -1,7 +1,7 @@
 """ 定义存储小组帖子tid的数据库表的表模型定义以及ORM连接
 """
 from sqlalchemy import create_engine,Integer,String
-from sqlalchemy.orm import registry, mapped_column, Mapped
+from sqlalchemy.orm import registry, mapped_column
 from sqlalchemy.orm import Session
 from TerminalLogger import LOGGER
 

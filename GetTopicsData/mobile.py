@@ -1,4 +1,6 @@
 import asyncio
+import json
+
 import aiohttp
 import hmac
 import base64
@@ -144,6 +146,9 @@ async def getTopics(tid_list: list):
     return results
 
 async def getTopicsData(tid_list:list):
+    """只获取主题帖内容
+
+    """
     results = {}
     for one_tid in tid_list:
         topicContent = await getTopic(one_tid)
@@ -158,6 +163,8 @@ async def getTopicsData(tid_list:list):
     return results
 
 async def getTopicsComments(tid_list:list):
+    """只获取主题帖的回复内容
+    """
     results = {}
     for one_tid in tid_list:
         topicContent = await getTopic(one_tid)
@@ -174,6 +181,7 @@ async def getTopicsComments(tid_list:list):
     return results
 
 def createTopicDataTask(tid_list:list):
+    """对外暴露的接口，根据由tid组成的列表，获取主题帖内容"""
     data = asyncio.run(getTopicsData(tid_list))
     result = []
     for ele in data.keys():
@@ -181,11 +189,12 @@ def createTopicDataTask(tid_list:list):
     return result
 
 def createTopicsCommentDataTask(tid_list:list):
+    """对外暴露的接口，根据由tid组成的列表，获取主题帖回复"""
     result = asyncio.run(getTopicsComments(tid_list))
     return result
 
 def test():
-    createTopicDataTask([269962261,276675253])
+    createTopicDataTask([258824539])
 
 
 # 276423355,276413817,276675253,
